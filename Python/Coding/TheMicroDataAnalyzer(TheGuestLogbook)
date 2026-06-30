@@ -1,0 +1,26 @@
+guest_count = o
+total_favourite_number = 0
+running = True 
+
+print("Welcome to The Guest Logbook!")
+
+while running:
+    name = input("Enter your name (or type 'exit' to quit): ")
+    if name.lower() == 'exit':
+        running = False
+    else:
+        favourite_number = input("Enter your favourite number: ")
+        try:
+            favourite_number = int(favourite_number)
+            guest_count += 1
+            total_favourite_number += favourite_number
+            print(f"Thank you, {name}! Your favourite number has been recorded.")
+        except ValueError:
+            print("Please enter a valid number.")
+
+if guest_count > 0:
+    average_favourite_number = total_favourite_number / guest_count
+    print(f"Total guests: {guest_count}")
+    print(f"Average favourite number: {average_favourite_number}")
+else:
+    print("No guests were recorded.")
