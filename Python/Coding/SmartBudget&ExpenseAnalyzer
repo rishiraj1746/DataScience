@@ -1,0 +1,22 @@
+print("Welcome to the Smart Budget & Expense Analyzer!")
+total_budget = int(input("Enter your total monthly budget ($)"))
+total_spent = int(input("Enter your total expenses ($)"))
+
+money_left = total_budget - total_spent
+
+percent_spent = (total_spent / total_budget)*100
+
+print("-----Financial Summary-----")
+print(f"You have {money_left} left in your budget.")
+print(f"You have spent {percent_spent:.2f}% of your budget.")
+
+print("-----Budget Advice-----")
+if percent_spent > 100:
+    print("You have exceeded your budget! Consider reviewing your expenses.")
+elif percent_spent > 80:
+    print("You are close to reaching your budget limit. Be cautious with your spending.")   
+elif percent_spent > 50:
+    print("You are halfway through your budget. Keep track of your expenses.") 
+else:
+    print("You are within your budget. Good job managing your finances!")
+
